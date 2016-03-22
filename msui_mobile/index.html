@@ -1,0 +1,718 @@
+<html>
+  
+  <head>
+    <!--[if lt IE 9]>
+      <script type="text/javascript">
+        window.location = "/error/notsupported";
+      </script>
+    <![endif]-->
+    <title>快借申请</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit|ie-stand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="fx.mobile.css" rel="stylesheet" type="text/css">
+    
+     <!-- Google Web Fonts -->
+
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+
+    <link rel="apple-touch-icon-precomposed" href="http://m.sui.taobao.org/assets/img/apple-touch-icon-114x114.png">
+ 
+    
+  </head>
+  
+  <body class="page-form-view" style="overflow:visible">
+    <form id="ajaxForm">
+	<div class="page page-group" id="page-city-picker" style="overflow:visible">
+    <div class="public-form x-form">
+      <div class="widget-wrapper">
+        <ul>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                借款人基本信息
+              </span>
+            </div>
+            <div class="f-description separator x-subhtml">
+              <span style="color:rgb(217, 83, 79);">
+                请勿填写虚假信息，复审会核实
+              </span>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">申请日期</span>
+            </div>
+            <div class="f-widget">
+              <div class="x-datetime x-ui-disable">
+               	<div class="x-picker-label nowrap" id="x_date"></div>
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">姓名</span>
+              <span class="f-required">*</span>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="text" name="name" value="123456" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">性别</span>
+              <span class="f-required">*</span>
+            </div>
+			<div class="list-block media-list fx-ul">
+			   <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="sex" value="1" >
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">男</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="sex" value="2">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">女</div>
+					  </label>
+					</li>
+				  </ul>
+			</div>
+          </li>
+         
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">身份证号码</span>
+              <span class="f-required">*</span>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+              	<input type="number" maxlength="18" size="18"  value="342530198904243913" name="id_number"  placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+		  
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">地址</span>
+              <span class="f-required">*</span>
+            </div>
+            <div class="f-widget">
+              <div class="x-address has-detail">
+                <div class="x-picker-label nowrap" >
+                	 <input type="text" style="border: 0;"  name="city" placeholder="请选择地址" id='city-picker'/>
+                </div>
+                <div class="x-textarea" >
+                  <textarea  name="address" placeholder="详细地址"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">借款支付宝帐号</span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-description separator x-subhtml">
+              必须是实名认证帐号，且有花呗和借条功能
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="text" name="alipay" value="123456@qq.com" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                手机
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="tel"  name="phone" maxlength="11" size="11"  value="18609876543" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                工作单位/在读学校
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="text" name="workplace"  value="123456"  placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                工作电话/学校电话
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-description separator x-subhtml">
+              格式：区号+号码（如
+              <span style="text-decoration:underline; color:rgb(23, 140, 223);">
+                010-8888888
+              </span>
+              ）
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="tel"  value="010-8888888" name="telephone" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                支付宝详情（请勿填写虚假信息，复审会核实）
+              </span>
+            </div>
+            <div class="f-description separator x-subhtml">
+              <span style="color:rgb(217, 83, 79);">
+                花呗最近两期无逾期，借呗（如有）最近两期无逾期，支付宝无负面记录。
+              </span>
+              <br>
+            </div>
+            <div class="f-widget">
+              <div class="x-radiogroup x-ui-disable">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                芝麻信用分
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-number">
+                <input type="number"   name="sesame_credit_score" placeholder="请输入数字">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                花呗信息
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-description separator x-subhtml">
+              必须有花呗，额度不小于1000，开通时间2个月以上，且正常使用
+            </div>
+            <div class="f-widget">
+              <div class="x-subform">
+                <div class="x-subform-content">
+                  <div class="x-subform-body">
+                    <div class="x-subform-line expand">
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <!--a class="x-subform-delete">
+                            <i class="icon icon-remove">
+                            </i>
+                          </a-->
+                          <div class="x-subform-label-text">
+                            额度（元）
+                            <span class="f-required" style="display: inline;">
+                              *
+                            </span>
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" class="huabei_quota" name="huabei_quota[]"  placeholder="请输入数字">
+                        </div>
+                      </div>
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <div class="x-subform-label-text">
+                            当前余额
+                            <span class="f-required" style="display: inline;">
+                              *
+                            </span>
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" class="huabei_balance" name="huabei_balance[]"  placeholder="请输入数字">
+                        </div>
+                      </div>
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <div class="x-subform-label-text">
+                            开通时间（月）
+                            <span class="f-required" style="display: inline;">
+                              *
+                            </span>
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" class="huabei_open_times" name="huabei_open_times[]"  placeholder="请输入数字">
+                        </div>
+                      </div>
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <div class="x-subform-label-text">
+                            逾期次数
+                            <span class="f-required"  style="display: inline;">
+                              *
+                            </span>
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" name="huabei_overdue[]" class="huabei_overdue"  placeholder="请输入数字">
+                        </div>
+                      </div>
+                    </div>
+					
+					
+                  </div>
+                </div>
+                <button class="x-btn style-white x-subform-btn-add" id="huabei_btn_add">
+                  <i class="icon icon-add">
+                  </i>
+                  <span>
+                    添加记录
+                  </span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                借呗信息（如有）
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-subform">
+                <div class="x-subform-content">
+                  <div class="x-subform-body">
+                    <div class="x-subform-line expand">
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <a class="x-subform-delete">
+                            <i class="icon icon-remove">
+                            </i>
+                          </a>
+                          <div class="x-subform-label-text">
+                            额度（元）
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" name="jiebei_quota[]" class="jiebei_quota" placeholder="请输入数字">
+                        </div>
+                      </div>
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <div class="x-subform-label-text">
+                            当前余额
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" name="jiebei_balance[]" name="jiebei_balance[]" placeholder="请输入数字">
+                        </div>
+                      </div>
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <div class="x-subform-label-text">
+                            开通时间（月）
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number"  name="jiebei_open_times[]" class="jiebei_open_times" placeholder="请输入数字">
+                        </div>
+                      </div>
+                      <div class="x-subform-cell">
+                        <div class="x-subform-label">
+                          <div class="x-subform-label-text">
+                            逾期次数
+                          </div>
+                        </div>
+                        <div class="x-subform-cell-widget x-number">
+                          <input type="number" name="jiebei_overdue[]" class="jiebei_overdue" placeholder="请输入数字">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="x-btn style-white x-subform-btn-add" id="jiebei_btn_add">
+                  <i class="icon icon-add">
+                  </i>
+                  <span>
+                    添加记录
+                  </span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                借款用途
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="text" name="borrow_purpose" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                担保方式
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+         
+            <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="ensure_way" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">实物</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="ensure_way" value="2">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">虚拟</div>
+					  </label>
+					</li>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="ensure_way" value="3">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">无</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                身份
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+           
+            <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="identity" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">学生</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="identity" value="2">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">普通职工</div>
+					  </label>
+					</li>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="identity" value="3">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">中高层领导</div>
+					  </label>
+					</li>
+					
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="identity" value="4">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">个体户</div>
+					  </label>
+					</li>
+					
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="identity" value="5">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">自由职业</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                是否有打卡工资
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="is_salary" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">是</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="is_salary" value="0">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">否</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                月收入
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="text" name="salary" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                是否缴纳社保
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+             <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="is_insurance" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">是</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="is_insurance" value="0" >
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">否</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                是否缴纳公积金
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+             <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="is_fund" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">是</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="is_fund" value="0">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">否</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                信用卡记录
+              </span>
+              <span class="f-required">
+                *
+              </span>
+            </div>
+			 <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="credit_record" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">信用良好</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="credit_record" value="2">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">1-3次逾期</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                是否有营业执照（企业 &amp; 个体）
+              </span>
+            </div>
+			 <div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="license" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">企业执照</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="license" value="2">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">个体执照</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="license" value="3">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">无</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                每月缴税
+              </span>
+            </div>
+			<div class="list-block media-list fx-ul">
+               <ul>
+					<li>
+					  <label class="label-checkbox item-content">
+						<input type="radio" name="taxe" value="1">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">每月缴税</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="taxe" value="2">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">季度缴税</div>
+					  </label>
+					</li>
+					<li>
+					   <label class="label-checkbox item-content">
+						<input type="radio" name="taxe" value="3">
+						<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+						<div class="item-inner">免税</div>
+					  </label>
+					</li>
+				  </ul>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                期望借款额度
+              </span>
+            </div>
+            <div class="f-description separator x-subhtml">
+              <p>
+                第一次借款额度
+                <span style="color:rgb(217, 83, 79);">
+                  500-2000
+                </span>
+                (周期1周）,老客户按信誉可提升额度和周期。
+              </p>
+            </div>
+            <div class="f-widget">
+              <div class="x-text">
+                <input type="text" name="hope_quota" placeholder="请输入文本内容">
+              </div>
+            </div>
+          </li>
+          <li class="f-line">
+            <div class="f-label">
+              <span class="f-title">
+                温馨提示：提交资料后等待5分钟，即可点击下面的链接查询初审结果，输入手机号查询
+              </span>
+            </div>
+            <div class="f-widget">
+              <div class="x-separator">
+                <div class="sep-line">
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="x-form-footer separator x-btn-pane col-1">
+        <div class="nav-item">
+          <button type="submit" class="test x-btn style-blue" >提交</button>
+        </div>
+      </div>
+    </div>
+	</form>
+    </div>
+	
+	<div class="tip" id="tips"><div>
+  </body>
+
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.js' charset='utf-8'></script>
+<script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script src="demos.js"></script>
+</html>
